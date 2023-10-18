@@ -29,7 +29,7 @@ const Routers = () => {
     <Route path='cart' element={<Cart/>}/>
     <Route path='Details' element={<ProductDetailes/>}/>
     <Route path='checkout' element={<Checkout/>}/>
-    <Route path='WatchList' element={<Watchlist/>}/>
+    <Route path='watchList' element={<Watchlist/>}/>
     <Route path='contact' element={<Contact/>}/>
     <Route path='help' element={<Help/>}/>
     <Route path='careers' element={<Carrers/>}/>

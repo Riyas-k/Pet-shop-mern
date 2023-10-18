@@ -48,9 +48,12 @@ const Header = () => {
           </div>
 
           <div className="flex gap-3 items-center">
-            <span>
-              <FiHeart size={22} />
+
+            <Link  to="watchList" >
+            <span  className="cursor-pointer">
+              <FiHeart  size={22} />
             </span>
+            </Link>
 
             <div className="bg-orange-300 w-32 rounded-xl  ">
               <div className="justify-center items-center text-black gap-3 flex">
