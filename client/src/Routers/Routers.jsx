@@ -19,6 +19,7 @@ import ListProducts from '../Admin/AdPages/ListProducts';
 import ListOrders from '../Admin/AdPages/ListOrders';
 import Login from '../components/Login/Login';
 import Signup from '../components/Signup/Signup';
+import AdminLogin from "../components/Ui/DiologBox/LoginDilog"
 
 const Routers = () => {
   return (
@@ -49,6 +50,9 @@ const Routers = () => {
     <Route path='/admin/products' element={<ListProducts/>}/>
     <Route path='/admin/orders' element={<ListOrders/>}/>
     <Route path='/admin/users' element={<Dashboard/>}/>
+    <Route path='/admin/login' element={<AdminLogin/>}/>
+
+
   
 
     </Routes>
