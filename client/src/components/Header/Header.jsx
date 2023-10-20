@@ -104,19 +104,27 @@ const Header = () => {
                 leading-10"
                 >
                   <ul>
-                    <li className="flex items-center justify-between">
-                      Signup <SiGnuprivacyguard className="ml-1" />
-                    </li>
-                    <li className="flex items-center justify-between">
-                      Login <AiOutlineLogin className="ml-1" />
-                    </li>
+                    <Link to="signup">
+                      <li className="flex items-center justify-between">
+                        Signup <SiGnuprivacyguard className="ml-1" />
+                      </li>
+                    </Link>
+                    <Link to="login">
+                      <li className="flex items-center justify-between">
+                        Login <AiOutlineLogin className="ml-1" />
+                      </li>
+                    </Link>
                     <hr />
-                    <li className="flex items-center justify-between">
-                      Admin <LiaBusinessTimeSolid className="ml-1" />
-                    </li>
-                    <li className="flex items-center justify-between">
-                      Help <FaHireAHelper className="ml-1" />
-                    </li>
+                    <Link to="admin">
+                      <li className="flex items-center justify-between">
+                        Admin <LiaBusinessTimeSolid className="ml-1" />
+                      </li>
+                    </Link>
+                    <Link to="help">
+                      <li className="flex items-center justify-between">
+                        Help <FaHireAHelper className="ml-1" />
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               )}
