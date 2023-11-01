@@ -24,6 +24,7 @@ export const userSignUp = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const userLogin = async (req, res) => {
@@ -44,6 +45,7 @@ export const userLogin = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -65,6 +67,7 @@ export const updatePassword = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
