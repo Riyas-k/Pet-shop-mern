@@ -2,6 +2,7 @@ import {
   checkEmail,
   getSignUp,
   getUser,
+  getUserData,
   updatePasswordUser,
 } from "../helpers/user-helpers.js";
 import {
@@ -64,5 +65,18 @@ export const updatePassword = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getProfile = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const data = await getUserData(id);
+    if (data) {
+      res.status(200).json(data);
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 };

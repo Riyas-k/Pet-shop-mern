@@ -57,3 +57,17 @@ export const updatePasswordUser = (password, email) => {
     }
   });
 };
+export const getUserData = (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const data = await User.findOne({ _id: id });
+      if (data == null) {
+        resolve({ status: false });
+      } else {
+        resolve(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
+};
