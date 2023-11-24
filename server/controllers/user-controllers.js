@@ -16,11 +16,11 @@ export const userSignUp = async (req, res) => {
     const { email, name, phone, password } = req.body;
     const verify = await checkEmail(email);
     if (verify.status) {
-      res.json({ status: true });
+      res.status(200).json({ status: true });
     } else {
       const hashedPassword = await hashPassword(password);
       const response = await getSignUp(email, name, phone, hashedPassword);
-      res.json(response);
+      res.status(201).json(response);
     }
   } catch (error) {
     console.log(error);
@@ -32,15 +32,15 @@ export const userLogin = async (req, res) => {
     const { email, password } = req.body;
     const verify = await checkEmail(email);
     if (!verify) {
-      res.json({ status: false });
+      res.status(404).json({ status: false });
     } else {
       let userData = await getUser(email);
       let comparePassword = await passwordCompare(password, userData.Password);
       if (!comparePassword) {
-        res.json({ status: false });
+        res.status(404).json({ status: false });
       } else {
         let token = await getUserToken(email);
-        res.json({ userData, token: token });
+        res.status(200).json({ userData, token: token });
       }
     }
   } catch (error) {
@@ -54,7 +54,7 @@ export const updatePassword = async (req, res) => {
     const { email, password } = req.body;
     const verify = await checkEmail(email);
     if (!verify) {
-      res.json({ status: false });
+      res.status(404).json({ status: false });
     } else {
       const hashedPassword = await hashPassword(password);
       const updateUserPassword = await updatePasswordUser(
@@ -62,7 +62,7 @@ export const updatePassword = async (req, res) => {
         email
       );
       if (updateUserPassword.status) {
-        res.json({ updateUserPassword });
+        res.status(200).json({ updateUserPassword });
       }
     }
   } catch (error) {

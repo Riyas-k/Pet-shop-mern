@@ -17,5 +17,4 @@ router.get("/view-products", getAllProducts);
 
 router.post("/edit-product", editProduct);
 
-
 export default router;
