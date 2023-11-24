@@ -30,7 +30,7 @@ export const addProduct = async (req, res) => {
       res.json(false);
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
@@ -39,7 +39,7 @@ export const getAllProducts = async (req, res) => {
     const products = await viewProducts();
     res.json(products);
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
@@ -69,6 +69,14 @@ export const editProduct = async (req, res) => {
       res.json({ response });
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
+
+export const viewSingleProduct = async(req,res)=>{
+  try {
+    
+  } catch (error) {
+    console.log(error.message);
+  }
+}

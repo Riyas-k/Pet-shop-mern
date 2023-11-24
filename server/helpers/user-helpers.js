@@ -10,7 +10,7 @@ export const checkEmail = (email) => {
         resolve({ status: false });
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   });
 };
@@ -27,7 +27,7 @@ export const getSignUp = (email, name, phone, hashPassword) => {
         resolve({ status: true });
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   });
 };
@@ -38,7 +38,7 @@ export const getUser = (email) => {
       let data = await User.findOne({ Email: email });
       resolve(data);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   });
 };
@@ -53,7 +53,7 @@ export const updatePasswordUser = (password, email) => {
         resolve({ status: true });
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   });
 };
@@ -67,7 +67,7 @@ export const getUserData = (id) => {
         resolve(data);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   });
 };

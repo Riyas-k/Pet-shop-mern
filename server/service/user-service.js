@@ -7,7 +7,7 @@ export const hashPassword = async (password) => {
     let hashPassword = await bcrypt.hash(password, salt);
     return hashPassword;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 export const passwordCompare = async (password, userPassword) => {
@@ -15,7 +15,7 @@ export const passwordCompare = async (password, userPassword) => {
     let compare = await bcrypt.compare(password, userPassword);
     return compare;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 export const getUserToken = async (email) => {
@@ -24,6 +24,6 @@ export const getUserToken = async (email) => {
     let token = jwt.sign(email, secret);
     return token;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };

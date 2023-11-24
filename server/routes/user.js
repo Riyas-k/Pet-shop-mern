@@ -7,12 +7,17 @@ import {
   getProfile,
 } from "../controllers/user-controllers.js";
 
+//user signup
 router.post("/sign-up", userSignUp);
 
+//user login
 router.post("/login", userLogin);
 
+//update user password
 router.post("/update-password", updatePassword);
 
+//get user profile
 router.get("/profile/:id", getProfile);
+
 
 export default router;

@@ -10,6 +10,6 @@ export function verifyAdmin(email, password, AdminEmail, AdminPassword) {
       return { status: false };
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }

@@ -10,7 +10,7 @@ export const adminLogin = (req, res) => {
       res.json(response);
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
