@@ -75,3 +75,17 @@ export const productEdit = (
     }
   });
 };
+export const getSingleProductData = (id)=>{
+  try {
+    return new Promise(async(resolve,reject)=>{
+      const data = await Product.findById(id);
+      if(data) {
+        resolve({data,status:true})
+      }else{
+        resolve({status:false})
+      }
+    })
+  } catch (error) {
+     console.log(error.message);
+  }
+}

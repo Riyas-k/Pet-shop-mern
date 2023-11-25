@@ -1,4 +1,5 @@
 import {
+  getSingleProductData,
   productAdd,
   productEdit,
   viewProducts,
@@ -73,10 +74,16 @@ export const editProduct = async (req, res) => {
   }
 };
 
-export const viewSingleProduct = async(req,res)=>{
+export const viewSingleProduct = async (req, res) => {
   try {
-    
+    const { id } = req.params;
+    const data = await getSingleProductData(id);
+    if (data.status) {
+      res.status(200).json(data);
+    } else {
+      res.status(404).json(false);
+    }
   } catch (error) {
     console.log(error.message);
   }
-}
+};

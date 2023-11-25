@@ -24,6 +24,6 @@ router.get("/view-products", getAllProducts);
 router.post("/edit-product", editProduct);
 
 //view single product
-router.get('/view-single-product',viewSingleProduct)
+router.get('/view-single-product/:id',viewSingleProduct)
 
 export default router;
