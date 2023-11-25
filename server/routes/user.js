@@ -6,6 +6,7 @@ import {
   updatePassword,
   getProfile,
 } from "../controllers/user-controllers.js";
+// import { verifyToken } from "../middleware/authMiddleware.js";
 
 //user signup
 router.post("/sign-up", userSignUp);
